@@ -1,4 +1,4 @@
 (executable
  (public_name RubiksCubeSolver)
  (name main)
- (libraries RubiksCubeSolver))
+ (flags :standard -w -37))

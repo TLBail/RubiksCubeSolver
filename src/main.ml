@@ -1,4 +1,6 @@
 open Couleur
-let face = Rouge;;
+open RubiksCube
 
-print_string (string_of_couleur face);;
+let cube = (1, Bleu)::(2,Rouge)::[];;
+
+print_endline (string_of_rubiksCube cube);;

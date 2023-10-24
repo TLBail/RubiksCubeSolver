@@ -1,0 +1,4 @@
+(executable
+ (public_name RubiksCubeSolver)
+ (name main)
+ (libraries RubiksCubeSolver))

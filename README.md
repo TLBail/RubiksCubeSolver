@@ -7,7 +7,7 @@ Pour installer le projet, vous devez avoir OPAM et Dune installés sur votre mac
 
 Clonez le dépôt :
 ```sh
-git clone https://github.com/votre_nom_d'utilisateur/RubiksCubeSolver.git
+git clone https://github.com/TLBail/RubiksCubeSolver.git
 ```
 Déplacez-vous dans le dossier du projet :
 ```sh

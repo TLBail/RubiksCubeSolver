@@ -1,9 +1,9 @@
-type couleur = Rouge | Vert | Bleu | Jaune | Violet | Orange;;
+type couleur = Rouge | Vert | Bleu | Jaune | Gris | Orange;;
 
 let string_of_couleur = function
   | Rouge -> "Rouge"
   | Vert -> "Vert"
   | Bleu -> "Bleu"
   | Jaune -> "Jaune"
-  | Violet -> "Violet"
+  | Gris -> "Gris"
   | Orange -> "Orange";;

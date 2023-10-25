@@ -12,14 +12,14 @@ let rec string_of_rubiksCube = function
 | (_, _)::_  -> "" ;;
 
 
-let rubiksCubeFini = (1, Rouge)::(2,Rouge)::(3, Rouge)::(4,Rouge)::
-(1, Vert)::(2, Vert)::(3, Vert)::(4, Vert)::
-(1, Orange)::(2, Orange)::(3, Orange)::(4, Orange)::
-(1, Jaune)::(2, Jaune)::(3, Jaune)::(4, Jaune)::
-(1, Violet)::(2, Violet)::(3, Violet)::(4, Violet)::
-(1, Bleu)::(2, Bleu)::(3, Bleu)::(4, Bleu)::[];;
+let rubiksCubeFini = (0, Gris)::(1, Gris)::(2, Gris)::(3, Gris)::
+(4, Rouge)::(5,Rouge)::(6, Rouge)::(7,Rouge)::
+(8, Bleu)::(9, Bleu)::(10, Bleu)::(11, Bleu)::
+(16, Jaune)::(17, Jaune)::(18, Jaune)::(19, Jaune)::
+(20, Orange)::(21, Orange)::(22, Orange)::(23, Orange)::[];;
 
 
 (* Todo : 
-val randomcube = unit -> rubiksCube;; 
+val randomcube = unit -> rubiksCube;; la fonction doit prendre le cube fini est faire genre 20 opération 
+de manière random pour être sur qu'il est finisable
 *)

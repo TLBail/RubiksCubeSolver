@@ -1,6 +1,6 @@
-open Couleur
 open RubiksCube
 
-let cube = (1, Bleu)::(2,Rouge)::[];;
+let cube = rubiksCubeFini;;
+
 
 print_endline (string_of_rubiksCube cube);;

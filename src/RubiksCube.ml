@@ -1,22 +1,26 @@
 open Couleur
 
-type rubiksCube  = (int * couleur) list;;
-let rec string_of_rubiksCube = function 
+type rubiksCube  = couleur list;;
+let string_of_rubiksCube cube =
+    let rec string_of_rubiksCube_Indexed couleurs  i  =  match couleurs with
 | [] -> ""
-| (a, clr)::(b,clrb)::(c, clrc)::(d,clrd)::r ->
-    "(" ^ (string_of_int a) ^  "," ^ (string_of_couleur clr) ^ ")  " ^ 
-    "(" ^ (string_of_int b) ^  "," ^ (string_of_couleur clrb) ^ ")  " ^ 
-    "(" ^ (string_of_int c) ^  "," ^ (string_of_couleur clrc) ^ ")  " ^ 
-    "(" ^ (string_of_int d) ^  "," ^ (string_of_couleur clrd) ^ ")  " ^ "\n" ^ 
-               string_of_rubiksCube r
-| (_, _)::_  -> "" ;;
+| clr::clrb::clrc::clrd::r ->
+    "(" ^ (string_of_int i) ^  "," ^ (string_of_couleur clr) ^ ")  " ^ 
+    "(" ^ (string_of_int (i + 1)) ^  "," ^ (string_of_couleur clrb) ^ ")  " ^ 
+    "(" ^ (string_of_int (i + 2)) ^  "," ^ (string_of_couleur clrc) ^ ")  " ^ 
+    "(" ^ (string_of_int (i + 3)) ^  "," ^ (string_of_couleur clrd) ^ ")  " ^ "\n" ^ 
+               string_of_rubiksCube_Indexed r (i + 4)
+| _::_  -> "" 
+in 
+    string_of_rubiksCube_Indexed cube 0;;
 
 
-let rubiksCubeFini = (0, Gris)::(1, Gris)::(2, Gris)::(3, Gris)::
-(4, Rouge)::(5,Rouge)::(6, Rouge)::(7,Rouge)::
-(8, Bleu)::(9, Bleu)::(10, Bleu)::(11, Bleu)::
-(16, Jaune)::(17, Jaune)::(18, Jaune)::(19, Jaune)::
-(20, Orange)::(21, Orange)::(22, Orange)::(23, Orange)::[];;
+let rubiksCubeFini = Gris::Gris::Gris::Gris::
+Rouge::Rouge::Rouge::Rouge::
+Bleu::Bleu::Bleu::Bleu::
+Vert::Vert::Vert::Vert::
+Jaune::Jaune::Jaune::Jaune::
+Orange::Orange::Orange::Orange::[];;
 
 
 (* Todo : 

@@ -1,5 +1,5 @@
 open RubiksCube
-type rotation  = (int list) * (int list);;
+type rotation = (int * int * int * int) * (int * int * int * int* int * int * int * int)
 
 val rotate : rubiksCube -> rotation -> rubiksCube
 

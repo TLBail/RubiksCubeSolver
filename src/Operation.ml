@@ -8,9 +8,23 @@ let swap lst i j =
 in 
 aux [] 0 lst;;
 
+let rotate cube (rtFace, rtCorner) = let cubeFace = match rtFace with
+| [] -> cube
+| a::b::c::d::[] ->
+  let rt1 = swap cube a d in
+  let rt2 = swap rt1 d c in
+  swap rt2 c b
+| _::_ -> cube in
+match rtCorner with
+| [] -> cubeFace
+| aa::ab::ba::bb::ca::cb::da::db::[] -> 
+  let rt1 = swap cubeFace aa ba in
+  let rt2 = swap rt1 ab bb in 
 
-let rec rotate cube rt = match rt with
-| ([], []) -> cube
-| (a::r, b::s) -> rotate (swap cube a b) (r, s)
-| (_, _) -> cube
+  let rt3 = swap rt2 ca da in
+  let rt4 = swap rt3 cb db in
 
+  let rt5 = swap rt4 aa ca in
+  swap rt5 ab cb
+| _ :: _ -> cubeFace;;
+  

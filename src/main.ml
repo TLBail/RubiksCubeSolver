@@ -4,7 +4,7 @@ open Operation
 let cube = rubiksCubeFini;;
 
 
-let nexRtn = getMv (Top, Horaire)
+let nexRtn = mouvements (Top, Horaire)
 
 let rotateCube = rotate cube nexRtn;;
 

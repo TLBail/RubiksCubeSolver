@@ -6,8 +6,7 @@ type face = Front | Back | Top | Bottom | Right | Left;;
 type mouvement = face * sens;;
 
 
-val mouvements : (mouvement * rotation) list;;
-val getMv : mouvement -> rotation;;
+val mouvements : mouvement -> rotation;;
 
 val rotate : rubiksCube -> rotation -> rubiksCube
 

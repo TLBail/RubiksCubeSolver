@@ -1,5 +1,24 @@
 type rotation = (int * int * int * int) * (int * int * int * int* int * int * int * int)
 
+type sens = Horaire | AntiHoraire;;
+type face = Front | Back | Top | Bottom | Right | Left;;
+type mouvement = face * sens;;
+
+
+let mouvements = [
+  ((Top, AntiHoraire), ((7,6,5,4),(16,17,20,21,8,9,0,1)));
+  ((Top, Horaire), ((4,5,6,7),(0,1,8,9,20,21,16,17)));
+  ((Front, Horaire), ((0,1,2,3), (7,6,8,11,13,12,18,17)));
+]
+
+let getMv (aFace, aSens) = 
+  let rec aux mvs = match mvs with
+| ((a,b), k)::_ when a = aFace && b = aSens -> k
+| _::r -> aux r
+| _ -> raise Not_found in
+  aux mouvements;;
+
+
 let swap lst i j =
   let rec aux acc k = function
     | [] -> List.rev acc

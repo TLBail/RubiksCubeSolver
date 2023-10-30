@@ -1,39 +1,12 @@
 open RubiksCube
 open Operation
 
-type identifier = char
-
-
-type piece = 
-   { pid    : identifier
-   ; x      : int
-   ; y      : int
-   ; width  : int
-   ; height : int
-   }
-
-let piece a b c d e = 
-  { pid = a ; x = b ; y = c ; width = d ; height = e } 
-
-
-
-let xs = List.init 4 (fun x -> x) (*[0..3]*)
-
-
-let ys = List.init 5 (fun x -> x) (*[0..4]*)
-
-type 'a set = rubiksCube 
-
-type k_state = { unState : piece set } 
+type k_state = { unState : rubiksCube } 
 
 let string_of_state { unState } = string_of_rubiksCube unState
 
 
-
-
 let equal_state s1 s2 = s1 = s2
-
-
 
 let anotherKlotski =
   { unState = Gris::Gris::Gris::Gris::

@@ -4,6 +4,18 @@ type sens = Horaire | AntiHoraire;;
 type face = Front | Back | Top | Bottom | Right | Left;;
 type mouvement = face * sens;;
 
+let string_of_mouvement (aface, asens) = let start = match aface with 
+  | Front -> "Front "
+  | Back -> "Back "
+  | Top -> "Top "
+  | Bottom -> "Bottom "
+  | Right -> "Right "
+  | Left -> "Left " in
+  start ^ match asens with
+  | Horaire -> " Horaire"
+  | AntiHoraire -> " AntiHoraire"
+
+
 
 let mouvements mv = match mv with 
   | (Top, AntiHoraire) ->  ((7,6,5,4),(16,17,0,1,8,9,20,21))
@@ -17,8 +29,7 @@ let mouvements mv = match mv with
   | (Right, Horaire) -> ((8, 9, 10, 11),(6, 5, 20, 23, 14, 13, 2, 1))
   | (Right, AntiHoraire) -> ((11, 10, 9, 8),(1, 2, 13, 14, 23, 20, 5, 6))
   | (Back, Horaire) -> ((20, 21, 22, 23), (5, 4, 16, 19, 15, 14, 10, 9))
-  | (Back, AntiHoraire) -> ((23, 22, 21, 20), (9, 10, 14, 15, 19, 16, 4, 5))
-  | _ -> raise Not_found;;
+  | (Back, AntiHoraire) -> ((23, 22, 21, 20), (9, 10, 14, 15, 19, 16, 4, 5));;
 
 let swap lst i j =
   let rec aux acc k = function

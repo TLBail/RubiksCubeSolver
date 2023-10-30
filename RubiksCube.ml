@@ -23,7 +23,10 @@ Jaune::Jaune::Jaune::Jaune::
 Orange::Orange::Orange::Orange::[];;
 
 
-(* Todo : 
-val randomcube = unit -> rubiksCube;; la fonction doit prendre le cube fini est faire genre 20 opération 
-de manière random pour être sur qu'il est finisable
-*)
+
+
+let rec rubiksCubeSolved rubiks = match rubiks with
+| [] -> true
+| aclr::bclr::cclr::dclr::r -> (aclr = bclr && bclr = cclr && cclr = dclr) && rubiksCubeSolved r
+| _ -> false
+    
